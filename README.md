@@ -1,18 +1,28 @@
-# Satellite Orbit Simulation (Python)
+# Satellite Orbit Simulation using RK4
 
-This project simulates a **2D elliptical orbit** of a satellite around Earth using Newtonian mechanics and a **Runge–Kutta 4th-order integrator (RK4)**. It plots the satellite’s trajectory and prints key orbital parameters such as semi-major axis, orbital period, and eccentricity.
+**Author:** Sanyam Kukreja  
+**Date:** October 2025  
+
+## Project Overview
+This project simulates the 2D orbit of a satellite around Earth using the **Runge–Kutta 4th order (RK4) integration method**. It calculates key orbital parameters, including **semi-major axis, orbital period, and eccentricity**, and visualizes the satellite's trajectory around the Earth.  
+
+The simulation demonstrates skills in:  
+- **Python programming**  
+- **Numerical methods and simulation**  
+- **Orbital mechanics and aerospace concepts**  
+- **Data visualization with Matplotlib**  
 
 ---
 
 ## Features
-- Models gravitational motion around Earth
-- Uses **numerical integration (RK4)** for stability and accuracy
-- Displays orbit trajectory using **Matplotlib**
-- Prints orbital parameters for analysis
+- Calculates semi-major axis, orbital period, and eccentricity of the orbit  
+- Simulates orbital trajectory using Newtonian mechanics  
+- Generates a 2D plot of the satellite orbit with Earth shown for scale  
+- Modular code structure for easy experimentation and extension  
 
 ---
 
-## Requirements
-Install the required Python packages before running:
+## Installation & Dependencies
+This project requires **Python 3** and the following packages:  
 ```bash
 pip install numpy matplotlib
