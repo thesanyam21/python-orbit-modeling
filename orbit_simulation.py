@@ -58,12 +58,27 @@ for t in np.arange(0, t_max, dt):
     state = rk4_step(state, dt)
 
 trajectory = np.array(trajectory)
-r_values = np.linalg.norm(trajectory, axis=1)
 
-# Calculate orbital parameters
-a = 1 / ((2 / np.linalg.norm(r0)) - (np.dot(v0, v0) / (G * M_earth)))
-ecc = np.linalg.norm(np.cross(r0, v0))**2 / (G * M_earth * a)
-T = 2 * np.pi * np.sqrt(a**3 / (G * M_earth))
+# Calculate semi-major axis, orbital period, and eccentricity
+r_mag = np.linalg.norm(r0)
+v_mag = np.linalg.norm(v0)
+mu = G * M_earth
+
+# Semi-major axis
+a = 1 / ((2 / r_mag) - (v_mag**2 / mu))
+
+# Orbital period
+T = 2 * np.pi * np.sqrt(a**3 / mu)
+
+# Eccentricity calculation
+# Extend vectors to 3D for np.cross
+r0_3d = np.append(r0, 0)
+v0_3d = np.append(v0, 0)
+h_vec = np.cross(r0_3d, v0_3d)                # angular momentum vector
+h_mag = np.linalg.norm(h_vec)
+
+# Eccentricity magnitude
+ecc = np.sqrt(1 - (h_mag**2) / (mu * a))
 
 print(f"Semi-major axis (a): {a/1000:.2f} km")
 print(f"Orbital period (T): {T/60:.2f} minutes")
