@@ -4,7 +4,7 @@ This project simulates a **2D elliptical orbit** of a satellite around Earth usi
 
 ---
 
-## 🛰️ Features
+## Features
 - Models gravitational motion around Earth
 - Uses **numerical integration (RK4)** for stability and accuracy
 - Displays orbit trajectory using **Matplotlib**
@@ -12,7 +12,7 @@ This project simulates a **2D elliptical orbit** of a satellite around Earth usi
 
 ---
 
-## 🧩 Requirements
+## Requirements
 Install the required Python packages before running:
 ```bash
 pip install numpy matplotlib
